@@ -23,7 +23,89 @@ public class HlavniProgram {
         //this.nakresliSlunicko(zofka, 20,12);
 
         this.nakresliKompozici(zofka);
+        zofka.setLocation(100,400);
+        this.nakresliP(zofka,50);
+        this.nakresliE(zofka,50);
+        this.nakresliP(zofka,50);
+        this.nakresliA(zofka,50);
+    }
+    public void nakresliA(Turtle zelva, int delka) {
+        zelva.turnRight(15);
+        zelva.move(delka);
+        zelva.turnRight(150);
+        zelva.move(delka);
+        zelva.turnRight(180);
+        zelva.move(delka/2);
+        zelva.turnLeft(75);
+        zelva.move(delka/4);
+        zelva.penUp();
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka*2);
+        zelva.turnLeft(90);
+        zelva.penDown();
+    }
+    public void nakresliP(Turtle zelva, int delka) {
 
+        zelva.move(delka);
+        zelva.turnRight(90);
+        nakresliNUhelnik(zelva,5,10,180);
+        zelva.penUp();
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka*2);
+        zelva.turnLeft(90);
+        zelva.penDown();
+    }
+    public void nakresliE(Turtle zelva, int delka) {
+
+        zelva.move(delka);
+        zelva.turnRight(90);
+        zelva.move(delka/3);
+        zelva.turnRight(180);
+        zelva.move(delka/3);
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka/4);
+        zelva.turnRight(180);
+        zelva.move(delka/4);
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka/3);
+        zelva.turnRight(180);
+        zelva.move(delka/3);
+        zelva.turnRight(180);
+        zelva.penUp();
+        zelva.move(delka*2);
+        zelva.turnLeft(90);
+        zelva.penDown();
+    }
+    public void nakresliF(Turtle zelva, int delka) {
+
+        zelva.move(delka);
+        zelva.turnRight(90);
+        zelva.move(delka/3);
+        zelva.turnRight(180);
+        zelva.move(delka/3);
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka/4);
+        zelva.turnRight(180);
+        zelva.move(delka/4);
+        zelva.turnRight(90);
+
+        zelva.penUp();
+        zelva.turnLeft(90);
+        zelva.move(delka/2);
+        zelva.turnLeft(90);
+        zelva.move(delka*2);
+        zelva.turnLeft(90);
+        zelva.penDown();
     }
     public void nakresliKompozici(Turtle zelva) {
         zelva.setLocation(150,50);
@@ -34,6 +116,7 @@ public class HlavniProgram {
         nakresliRaduDomu(zelva,50,2,350);
         zelva.setLocation(300,300);
         nakresliPrasatko(zelva,50,20);
+        zelva.turnLeft(60);
     }
     public void nakresliRaduDomu(Turtle zelva, int delka, int pocetDomu, int odstup) {
         for (int i = 0; i < pocetDomu; i++) {
@@ -47,11 +130,12 @@ public class HlavniProgram {
             zelva.penDown();
         }
     }
-    public void nakresliNUhelnik(Turtle zelva, int delka, int pocetkroku) {
+
+    public void nakresliNUhelnik(Turtle zelva, int delka, int pocetkroku,double uhel) {
 
         for (int i = 0; i < pocetkroku; i++) {
             zelva.move(delka);
-            zelva.turnRight(360.0 / pocetkroku);
+            zelva.turnRight(uhel / pocetkroku);
         }
     }
     public void nakresliSlunicko(Turtle zelva, int delka, int pocetkroku) {
